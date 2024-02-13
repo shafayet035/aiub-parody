@@ -4,6 +4,7 @@ import './globals.css';
 import { ThemeProvider } from '@/providers/theme-providers';
 import { ModeToggle } from '@/components/ModeToggle';
 import { ClerkProvider } from '@clerk/nextjs';
+import { Sidebar } from '@/components/ui/sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,8 +28,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <ModeToggle />
-            {children}
+            <div className='grid grid-cols-5 max-w-[1200px] mx-auto'>
+              <Sidebar className='col-span-1' />
+              <div className='col-span-3'>{children}</div>
+              <div className='col-span-1'>Another sidebar</div>
+            </div>
           </ThemeProvider>
         </ClerkProvider>
       </body>
