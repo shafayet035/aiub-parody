@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/providers/theme-providers';
-import { ModeToggle } from '@/components/ModeToggle';
 import { ClerkProvider } from '@clerk/nextjs';
-import { Sidebar } from '@/components/ui/sidebar';
+import { Sidebar } from '@/components/Sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,10 +27,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className='grid grid-cols-5 max-w-[1200px] mx-auto'>
+            <div className='grid grid-cols-4 max-w-[800px] mx-auto w-full gap-1'>
+              <main className='col-span-3 flex py-6 min-h-screen flex-col border-x-2 px-2'>
+                {children}
+              </main>
               <Sidebar className='col-span-1' />
-              <div className='col-span-3'>{children}</div>
-              <div className='col-span-1'>Another sidebar</div>
             </div>
           </ThemeProvider>
         </ClerkProvider>
