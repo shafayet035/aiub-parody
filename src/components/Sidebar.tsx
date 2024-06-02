@@ -19,7 +19,7 @@ export function Sidebar({ className }: SidebarProps) {
         <div className='px-3 py-2'>
           <div className='flex justify-between items-center mb-3 text-right'>
             <ModeToggle />
-            <UserButton afterSignOutUrl='/' />
+            <UserButton afterSignOutUrl='/sign-in' />
           </div>
         </div>
         <div className='px-3 py-2'>

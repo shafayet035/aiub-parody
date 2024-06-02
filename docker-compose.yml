@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  personal:
+    image: postgres
+    restart: always
+    container_name: aiub-parody-db
+    ports:
+      - 5432:5432
+    environment:
+      PGPASSWORD: 'postgres'
+      POSTGRES_DB: 'aiub'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+    volumes:
+      - postgres:/data/postgres
+
+volumes:
+  postgres:
